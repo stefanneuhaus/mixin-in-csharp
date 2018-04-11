@@ -1,32 +1,14 @@
 ﻿using System;
+using Drinker;
+using Singer;
 
-class Singer
-{
-    public void Sing()
-    {
-        Console.WriteLine("la la LAAA ...");
-    }
-}
-
-class Drinker
-{
-    public void Drink()
-    {
-        Console.WriteLine("*sip*");
-    }
-}
-
-/*
- * !! no valid C# code --- does not compile !!
- *
- * error CS1721: Class 'Bird' cannot have multiple base classes: 'Singer' and 'Drinker'
- */
-class Bird : Singer, Drinker { }
+class Bird : MSinger, MDrinker { }
 
 class Program
 {
     static void Main(string[] args)
     {
+        Console.WriteLine("-- Bird:");
         Bird bird = new Bird();
         bird.Sing();
         bird.Drink();
